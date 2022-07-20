@@ -1,0 +1,21 @@
+{% extends "AppFinal/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<section class="resume-section" id="education">
+    <div class="resume-section-content">
+        <h2 class="mb-5">Formación Académica</h2>
+        {% for x in formaciones reversed %}
+        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="flex-grow-1">
+                <h3 class="mb-0">{{x.institucion}}</h3>
+                <div class="subheading mb-3">{{x.nombreCurso}}</div>
+                <div>{{x.descripcion}}</div><br>
+                <p><b>Estado:</b> {{x.estado}}<br><b>Proyecto final:</b> {{x.proyectoFinal}}</p>
+            </div>
+            <div class="flex-shrink-0"><span class="text-primary">{{x.fechaInicial}} - {{x.fechaFinal}}</span></div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<hr class="m-0" />
+{% endblock %}

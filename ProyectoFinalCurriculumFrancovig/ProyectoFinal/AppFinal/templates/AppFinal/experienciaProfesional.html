@@ -1,0 +1,20 @@
+{% extends "AppFinal/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<section class="resume-section" id="experience">
+    <div class="resume-section-content">
+        <h2 class="mb-5">Experiencia profesional</h2>
+        {% for x in experiencias reversed %}
+        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="flex-grow-1">
+                <h3 class="mb-0">{{x.puesto}}</h3>
+                <div class="subheading mb-3">{{x.empresa}}</div>
+                <p>{{x.descripcion}}<br><br> <b>Referencias:</b> {{x.referencia}} - {{x.telefonoReferencia}} </p>
+            </div>
+            <div class="flex-shrink-0"><span class="text-primary">{{x.fechaInicial}} - {{x.fechaFinal}}</span></div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<hr class="m-0" />
+{% endblock %}

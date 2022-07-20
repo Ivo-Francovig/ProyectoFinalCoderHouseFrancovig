@@ -1,0 +1,25 @@
+{% extends "AppFinal/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+<section class="resume-section" id="education">
+    <div class="resume-section-content">
+        <h2 class="mb-5">Listado de formaciones</h2>
+        {% for h in object_list reversed %}
+        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="flex-grow-1">
+                    <h3 class="mb-0">{{h.nombreCurso}}</h3>
+                    <p> 
+                        <a href="{% url 'FDetail' h.id %}">Ver</a> | 
+                        <a href="{% url 'FEdit' h.id %}">Editar</a> | 
+                        <a href="{% url 'FDelete' h.id %}">Borrar</a> 
+                        
+                    </p> 
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<hr class="m-0" />
+
+{% endblock %}

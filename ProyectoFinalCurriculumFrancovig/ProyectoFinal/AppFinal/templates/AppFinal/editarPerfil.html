@@ -1,0 +1,21 @@
+{% extends "AppFinal/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<section class="resume-section" id="experience">
+    <div class="resume-section-content">
+        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="flex-grow-1">
+                <form method="post"> {% csrf_token %}
+                    <h3 class="mb-0">Editar usuario: "{{usuario}}"</h3></br>
+                    <table>
+                        {{miFormulario.as_table}}
+                    </table>    
+                    </br>
+                    <input type="submit" value="Guardar"><br><br>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<hr class="m-0" />
+{% endblock %}

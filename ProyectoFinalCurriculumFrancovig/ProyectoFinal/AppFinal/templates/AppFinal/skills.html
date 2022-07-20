@@ -1,0 +1,31 @@
+{% extends "AppFinal/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<section class="resume-section" id="skills">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <div class="resume-section-content">
+        <h2 class="mb-5">Skills</h2>
+        <ul class="fa-ul mb-0">
+            {% for x in skills reversed %}
+            <li>
+                <span class="fa-li"><i class="fas fa-check"></i></span>
+                <b>{{x.software}}</b> - {{x.nivel}}</br>
+            </li>
+            {% endfor %}
+        </ul><br>
+        <ul class="list-inline dev-icons">
+            <i class="devicon-python-plain"></i>
+            <i class="devicon-mysql-plain"></i>
+            <i class="devicon-django-plain"></i>
+            <i class="devicon-vscode-plain"></i>
+            <i class="devicon-html5-plain"></i>
+            <i class="devicon-unity-original"></i>
+            <i class="devicon-cplusplus-plain"></i>
+            <i class="devicon-blender-original"></i>
+            <i class="devicon-photoshop-plain"></i>
+            <i class="devicon-illustrator-plain"></i>
+        </ul> <br>
+    </div>
+</section>
+<hr class="m-0" />
+{% endblock %}

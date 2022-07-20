@@ -1,0 +1,25 @@
+{% extends "AppFinal/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+<section class="resume-section" id="experience">
+    <div class="resume-section-content">
+        <h2 class="mb-5">Listado de experiencias profesionales</h2>
+        {% for x in object_list reversed %}
+        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="flex-grow-1">
+                    <h3 class="mb-0">{{x.empresa}}</h3>
+                    <p> 
+                        <a href="{% url 'Detail' x.id %}">Ver</a> | 
+                        <a href="{% url 'Edit' x.id %}">Editar</a> | 
+                        <a href="{% url 'Delete' x.id %}">Borrar</a> 
+                        
+                    </p> 
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<hr class="m-0" />
+
+{% endblock %}

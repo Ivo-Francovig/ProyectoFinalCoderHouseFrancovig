@@ -1,0 +1,22 @@
+{% extends "AppFinal/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<section class="resume-section" id="skills">
+    <div class="resume-section-content">
+            <ul class="fa-ul mb-0">
+                <h3 class="mb-0">Borrar experiencias</h3><br>
+                <form method="post">{% csrf_token %}
+                    <p>¿Estás seguro que deseas borrar:</br>
+                    <b><i>"{{ object }}"?</i></b></br></p>
+                    <input type="submit" value="Confirmar" />
+                </form>
+                <br>
+                <p>
+                    <a href="{% url 'FList' %}">Regresar</a>
+                </p>
+            </ul><br>
+    </div>
+</section>
+<hr class="m-0" />
+{% endblock %}
+

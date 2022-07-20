@@ -1,0 +1,21 @@
+{% extends "AppFinal/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<section class="resume-section" id="skills">
+    <div class="resume-section-content">
+            <ul class="fa-ul mb-0">
+                <h3 class="mb-0">Detalles</h3><br>
+                <p><b>Nombre:</b> <i>{{object.nombreCurso}}</i></p>
+                <p><b>Institución:</b> <i>{{object.institucion}}</i></p>
+                <p><b>Fecha inicial:</b> <i>{{object.fechaInicial}}</i></p>
+                <p><b>Fecha final:</b> <i>{{object.fechaFinal}}</i></p>
+                <p><b>Estado:</b> <i>{{object.estado}}</i></p>
+                <p><b>Proyecto final:</b> <i>{{object.proyectoFinal}}</i></p>
+                <p>
+                    <a href="{% url 'FList' %}">Regresar</a>
+                </p>
+            </ul><br>
+    </div>
+</section>
+<hr class="m-0" />
+{% endblock %}
